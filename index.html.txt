@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>اقرأ++ | محرر</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>مرحبًا بك في اقرأ++</h1>
+  <textarea id="editor" placeholder="اكتب كود اقرأ++ هنا..."></textarea><br>
+  <button onclick="runCode()">▶️ تشغيل</button>
+  <button onclick="suggestAI()">🤖 اقتراح ذكي</button>
+  <button onclick="saveProject()">💾 حفظ المشروع</button>
+  <pre id="output"></pre>
+  <script src="editor.js"></script>
+  <script src="supabase.js"></script>
+</body>
+</html>

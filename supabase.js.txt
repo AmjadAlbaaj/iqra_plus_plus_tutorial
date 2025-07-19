@@ -1,0 +1,21 @@
+// ⚠️ تأكد من أنك أضفت مكتبة Supabase في index.html إن لزم
+// <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+const supabaseUrl = "https://vsgianlnkycshdvzutsy.supabase.co
+";
+const supabaseKey = ""AIzaSyAAHTN_nnMAz1PleyT7_2m6AUJ9AXwuaAs"";
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+async function saveProject() {
+  const code = document.getElementById("editor").value;
+
+  const { error } = await supabase
+    .from("projects")
+    .insert([{ code, created_at: new Date() }]);
+
+  if (error) {
+    alert("❌ خطأ أثناء الحفظ: " + error.message);
+  } else {
+    alert("✅ تم حفظ المشروع بنجاح!");
+  }
+}

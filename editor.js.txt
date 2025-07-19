@@ -1,0 +1,21 @@
+function runCode() {
+  const input = document.getElementById("editor").value;
+  let output = "";
+
+  if (input.includes("اقرأ")) {
+    output = "📘 تنفيذ: " + input.replace(/اقرأ/g, "عرض");
+  } else {
+    output = "❌ لا يمكن تفسير الكود";
+  }
+
+  document.getElementById("output").textContent = output;
+}
+
+function suggestAI() {
+  const code = document.getElementById("editor").value;
+  const suggestion = code.includes("اقرأ")
+    ? code.replace("اقرأ", "بسم الله")
+    : "جرب استخدام 'اقرأ' كبداية";
+
+  document.getElementById("output").textContent = "🤖 اقتراح: " + suggestion;
+}
